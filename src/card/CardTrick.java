@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -70,6 +71,26 @@ public class CardTrick {
             System.out.println("Congratulations! Your card is in the magic hand!");
         } else {
             System.out.println("Sorry, your card is not in the magic hand.");
+        }
+        
+        // add one luckcard hard code 2,clubs
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Clubs");
+        
+        boolean luckyFound = false;
+        for (int i = 0; i < magicHand.length; i++) {
+            Card c = magicHand[i];
+            if (c.getValue() == luckyCard.getValue() && c.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+                luckyFound = true;
+                break;
+            }
+        }
+        
+        if (luckyFound) {
+            System.out.println("Lucky card is in the magic hand!");
+        } else {
+            System.out.println("Lucky card is not in the magic hand.");
         }
         
         input.close();      
